@@ -1,6 +1,6 @@
 {
   "name": "random-fixture-data",
-  "version": "1.0.10",
+  "version": "2.0.10",
   "description": "Random fixture data generator cloned from boo1ean/casual by Egor Gumenyuk...",
   "main": "src/casual.js",
   "scripts": {
