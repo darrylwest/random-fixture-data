@@ -16,7 +16,8 @@ var build_casual = function() {
 
 		Object.keys(this).forEach(function(name) {
 			if (name[0] === '_') {
-				adapter[name.slice(1)] = casual[name];
+                var nm = name.slice(1);
+				adapter[ nm ] = casual[name];
 			}
 		});
 
