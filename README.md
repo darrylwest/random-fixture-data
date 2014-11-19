@@ -1,24 +1,28 @@
-## Fake data generator [![Build Status](https://travis-ci.org/boo1ean/casual.png?branch=master)](https://travis-ci.org/boo1ean/casual)
+## Random Fixture Data
+
+_Adapted from casual's fake data generator..._
+
+[![Build Status](https://travis-ci.org/darrylwest/random-fixture-data.png?branch=master)](https://travis-ci.org/darrylwest/random-fixture-data)
 
 ## Installation
 
-> npm install casual
+> npm install random-fixture-data --save
 
 ## Usage
 
 ```javascript
-var casual = require('casual');
+var data = require('random-fixture-data');
 
 // Generate random sentence
 // You don't need function call operator here
 // because most of generators use properties mechanism
-var sentence = casual.sentence;
+var sentence = data.sentence;
 
 // Generate random city name
-var city = casual.city;
+var city = data.city;
 
 // Define custom generator
-casual.define('point', function() {
+data.define('point', function() {
 	return {
 		x: Math.random(),
 		y: Math.random()
@@ -26,12 +30,12 @@ casual.define('point', function() {
 });
 
 // Generate random point
-var point = casual.point;
+var point = data.point;
 
 // And so on..
 ```
 
-Casual uses javascript properties for common generators so you don't need to use function call operator
+Random Fixture Data uses javascript properties for common generators so you don't need to use function call operator
 
 ## Embedded generators
 
