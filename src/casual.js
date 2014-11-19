@@ -8,6 +8,23 @@ var safe_require = function(filename) {
 	return {};
 };
 
+var capitalizeName = function(name) {
+    var ss = name.split('_'),
+        nm = ss.shift();
+    
+    if (ss.length === 0) {
+        return name;
+    }
+
+    ss.forEach(function(s) {
+        nm += s.replace(/^[a-z]/, function(m) {
+            return m.toUpperCase();
+        });
+    });
+    
+    return nm ;
+};
+
 var build_casual = function() {
 	var casual = helpers.extend({}, helpers);
 
@@ -17,7 +34,13 @@ var build_casual = function() {
 		Object.keys(this).forEach(function(name) {
 			if (name[0] === '_') {
                 var nm = name.slice(1);
-				adapter[ nm ] = casual[name];
+				adapter[ nm ] = casual[ name ];
+                
+                // change the underscores methods to mixed case...
+                if (nm.indexOf('_') > 0 && nm.length > 5) {
+                    nm = capitalizeName( nm );
+                    adapter[ nm ] = casual[ name ];
+                }
 			}
 		});
 
