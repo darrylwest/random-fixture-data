@@ -1,12 +1,12 @@
 {
-  "name": "casual",
-  "version": "1.4.6",
-  "description": "Fake data generator",
+  "name": "random-fixture-data",
+  "version": "1.0.10",
+  "description": "Random fixture data generator cloned from boo1ean/casual by Egor Gumenyuk...",
   "main": "src/casual.js",
   "scripts": {
     "test": "make test"
   },
-  "repository": "https://github.com/boo1ean/casual.git",
+  "repository": "https://github.com/darrylwest/random-fixture-data",
   "keywords": [
     "faker",
     "fake",
