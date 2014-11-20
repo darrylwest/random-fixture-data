@@ -1,7 +1,7 @@
 {
   "name": "random-fixture-data",
-  "version": "2.0.11",
-  "description": "Random fixture data generator cloned from boo1ean/casual by Egor Gumenyuk...",
+  "version": "2.0.12",
+  "description": "Random fixture data generator cloned from boo1ean/casual by Egor Gumenyuk to provide mixed-case methods...",
   "main": "src/casual.js",
   "scripts": {
     "test": "make test"

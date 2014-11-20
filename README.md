@@ -1,6 +1,6 @@
 ## Random Fixture Data
 
-_Adapted from casual's fake data generator.  This version creates mixed-case methods that pass jshint tests..._
+Adapted from casual's fake data generator.  This version creates mixed-case methods that pass jshint tests...
 
 [![NPM version](https://badge.fury.io/js/random-fixture-data.svg)](http://badge.fury.io/js/random-fixture-data)
 [![Build Status](https://travis-ci.org/darrylwest/random-fixture-data.png?branch=master)](https://travis-ci.org/darrylwest/random-fixture-data)
@@ -8,7 +8,7 @@ _Adapted from casual's fake data generator.  This version creates mixed-case met
 
 ## Installation
 
-> npm install random-fixture-data --save
+> npm install random-fixture-data --save-dev
 
 ## Usage
 
@@ -54,9 +54,11 @@ casual.address1         // '8417 Veda Circles'
 casual.address2         // 'Suite 648'
 casual.state            // 'Michigan'
 casual.state_abbr       // 'CO'
+casual.stateAbbr        // 'CO'
 casual.latitude         // 90.0610
 casual.longitude        // 180.0778
 casual.building_number  // 2413
+casual.buildingNumber   // 2413
 
 // Text
 
@@ -66,10 +68,12 @@ casual.title                  // 'Systematic nobis'
 casual.text                   // 'Nemo tempore natus non accusamus eos placeat nesciunt. et fugit ut odio nisi dolore non ... (long text)'
 casual.description            // 'Vel et rerum nostrum quia. Dolorum fuga nobis sit natus consequatur.'
 casual.short_description      // 'Qui iste similique iusto.'
+casual.shortDescription      // 'Qui iste similique iusto.'
 casual.string                 // 'saepe quia molestias voluptates et'
 casual.word                   // 'voluptatem'
 casual.words(n = 7)           // 'sed quis ut beatae id adipisci aut'
 casual.array_of_words(n = 7)  // [ 'voluptas', 'atque', 'vitae', 'vel', 'dolor', 'saepe', 'ut' ]
+casual.arrayOfWords(n = 7)  // [ 'voluptas', 'atque', 'vitae', 'vel', 'dolor', 'saepe', 'ut' ]
 casual.letter                 // 'k'
 
 // Internet
@@ -84,14 +88,21 @@ casual.email   // 'Josue.Hessel@claire.us'
 casual.name            // 'Alberto'
 casual.username        // 'Darryl'
 casual.first_name      // 'Derek'
+casual.firstName       // 'Derek'
 casual.last_name       // 'Considine'
+casual.lastName        // 'Considine'
 casual.full_name       // 'Kadin Torphy'
 casual.password        // '(205)580-1350Schumm'
 casual.name_prefix     // 'Miss'
+casual.namePrefix      // 'Miss'
 casual.name_suffix     // 'Jr.'
+casual.nameSuffix      // 'Jr.'
 casual.company_name    // 'Cole, Wuckert and Strosin'
+casual.companyName     // 'Cole, Wuckert and Strosin'
 casual.company_suffix  // 'Inc'
+casual.companySuffix   // 'Inc'
 casual.catch_phrase    // 'Synchronised optimal concept'
+casual.catchPhrase     // 'Synchronised optimal concept'
 casual.phone           // '380 82 790 25 92'
 
 // Numbers
@@ -100,8 +111,10 @@ casual.random                            // 0.7171590146608651 (core generator)
 casual.integer(from = -1000, to = 1000)  // 632
 casual.double(from = -1000, to = 1000)   // -234.12987444
 casual.array_of_digits(n = 7)            // [ 4, 8, 3, 1, 7, 6, 6 ]
+casual.arrayOfDigits(n = 7)              // [ 4, 8, 3, 1, 7, 6, 6 ]
 casual.array_of_integers(n = 7)          // [ -105, -7, -532, -596, -430, -957, -234 ]
-casual.array_of_doubles(n = 7)           // [ -866.3755785673857, -166.62194719538093, ...]
+casual.arrayOfIntegers(n = 7)            // [ -105, -7, -532, -596, -430, -957, -234 ]
+casual.arrayOfDoubles(n = 7)             // [ -866.3755785673857, -166.62194719538093, ...]
 
 // Date
 
@@ -112,34 +125,51 @@ casual.time(format = 'HH:mm:ss')    // '03:08:02' (see available formatters http
 casual.century                      // 'IV'
 casual.am_pm                        // 'am'
 casual.day_of_year                  // 323
+casual.dayOfYear                    // 323
 casual.day_of_month                 // 9
+casual.dayOfMonth                   // 9
 casual.day_of_week                  // 4
+casual.dayOfWeek                    // 4
 casual.month_number                 // 9
+casual.monthNumber                  // 9
 casual.month_name                   // 'March'
+casual.monthName                    // 'March'
 casual.year                         // 1990
 casual.timezone                     // 'America/Miquelon'
 
 // Payments
 
 casual.card_type            // 'American Express'
+casual.cardType             // 'American Express'
 casual.card_number(vendor)  // '4716506247152101' (if no vendor specified then random)
+casual.cardNumber(vendor)   // '4716506247152101' (if no vendor specified then random)
 casual.card_exp             // '03/04'
+casual.cardExp              // '03/04'
 casual.card_data            // { type: 'MasterCard', number: '5307558778577046', exp: '04/88', holder_name: 'Jaron Gibson' }
+casual.cardData             // { type: 'MasterCard', number: '5307558778577046', exp: '04/88', holder_name: 'Jaron Gibson' }
 
 // Misc
 
 casual.country_code    // 'ES'
+casual.countryCode     // 'ES'
 casual.language_code   // 'ru'
+casual.languageCode    // 'ru'
 casual.locale          // 'hi_IN'
 casual.mime_type       // 'audio/mpeg'
+casual.mimeType        // 'audio/mpeg'
 casual.file_extension  // 'rtf'
+casual.fileExtension   // 'rtf'
 
 // Colors
 
 casual.color_name       // 'DarkOliveGreen'
+casual.colorName        // 'DarkOliveGreen'
 casual.safe_color_name  // 'maroon'
+casual.safeColorName    // 'maroon'
 casual.rgb_hex          // '#2e4e1f'
+casual.rgbHex           // '#2e4e1f'
 casual.rgb_array        // [ 194, 193, 166 ]
+casual.rgbArray         // [ 194, 193, 166 ]
 ```
 
 ## Define custom generators
