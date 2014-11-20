@@ -34,12 +34,10 @@ var build_casual = function() {
 		Object.keys(this).forEach(function(name) {
 			if (name[0] === '_') {
                 var nm = name.slice(1);
-				adapter[ nm ] = casual[ name ];
+                adapter[ nm ] = casual[ name ];
                 
-                // change the underscores methods to mixed case...
-                if (nm.indexOf('_') > 0 && nm.length > 5) {
-                    nm = capitalizeName( nm );
-                    adapter[ nm ] = casual[ name ];
+                if (nm.indexOf('_') > 0) {
+                    adapter[ capitalizeName( nm ) ] = casual[ name ];
                 }
 			}
 		});
@@ -84,9 +82,30 @@ var build_casual = function() {
 	];
 
 	locales.forEach(casual.register_locale);
-
+    
 	return casual;
 };
 
-// Default locale is en_US
-module.exports = build_casual().en_US;
+// create mixed case methods
+var build = function() {
+    // Default locale is en_US
+    var casual = build_casual().en_US;
+    
+    Object.keys( casual ).forEach(function(key) {
+        if (key[0] === '_') {
+            var name = key.slice(1),
+                nm;
+            
+            if (name.indexOf('_') > 0) {
+                nm = capitalizeName( name );
+                casual.define( nm, function() {
+                    return casual[ name ];
+                });
+            }
+        }
+    });
+    
+    return casual;
+};
+
+module.exports = build();
