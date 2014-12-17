@@ -1,6 +1,6 @@
 ## Random Fixture Data
 
-Adapted from casual's fake data generator.  This version creates mixed-case methods that pass jshint tests...
+Adapted from casual's fake data generator.  This version creates mixed-case methods that pass jshint tests when camelcase is set to true. New methods are documented below...
 
 [![NPM version](https://badge.fury.io/js/random-fixture-data.svg)](http://badge.fury.io/js/random-fixture-data)
 [![Build Status](https://travis-ci.org/darrylwest/random-fixture-data.png?branch=master)](https://travis-ci.org/darrylwest/random-fixture-data)
