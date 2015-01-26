@@ -1,6 +1,6 @@
 {
   "name": "random-fixture-data",
-  "version": "2.0.13",
+  "version": "2.0.14",
   "description": "Random fixture data generator cloned from boo1ean/casual by Egor Gumenyuk to provide mixed-case methods that pass jshint tests where camelcase is set to true...",
   "main": "src/casual.js",
   "scripts": {
