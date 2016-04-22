@@ -223,7 +223,7 @@ If you don't find necessary locale, please create an issue or just [add it](#con
 
 ## Helpers
 
-#### random_element
+#### random_element (randomElement)
 
 Get random array element
 
@@ -231,7 +231,7 @@ Get random array element
 var item = casual.random_element(['ball', 'clock', 'table']);
 ```
 
-#### random_value
+#### random_value (randomValue)
 
 Extract random object value
 
@@ -240,7 +240,7 @@ var val = casual.random_value({ a: 1, b: 3, c: 42 });
 // val will be equal 1 or 3 or 42
 ```
 
-#### random_key
+#### random_key (randomKey)
 
 Extract random object key
 

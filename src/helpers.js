@@ -68,6 +68,9 @@ var populate_one_of = function(formats) {
 };
 
 module.exports = {
+	randomElement: random_element,
+	randomValue: random_value,
+	randomKey: random_key,
 	random_element: random_element,
 	random_value: random_value,
 	random_key: random_key,
