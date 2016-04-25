@@ -13,15 +13,15 @@ Adapted from casual's fake data generator.  This version creates mixed-case meth
 ## Usage
 
 ```javascript
-var data = require('random-fixture-data');
+const data = require('random-fixture-data');
 
 // Generate random sentence
 // You don't need function call operator here
 // because most of generators use properties mechanism
-var sentence = data.sentence;
+let sentence = data.sentence;
 
 // Generate random city name
-var city = data.city;
+let city = data.city;
 
 // Define custom generator
 data.define('point', function() {
@@ -32,7 +32,7 @@ data.define('point', function() {
 });
 
 // Generate random point
-var point = data.point;
+let point = data.point;
 
 // And so on..
 ```
@@ -185,7 +185,7 @@ casual.define('user', function() {
 });
 
 // Generate object with randomly generated fields
-var user = casual.user;
+let user = casual.user;
 ```
 
 If you want to pass some params to your generator:
@@ -200,7 +200,7 @@ casual.define('profile', function(type) {
 });
 
 // Generate object with random data
-var profile = casual.profile('public');
+let profile = casual.profile('public');
 ```
 
 NOTE: if getter function has non-empty arguments list then generator should be called as function `casual.profile('public')`,
@@ -211,7 +211,7 @@ otherwise it should be accessed as property `casual.profile`.
 You can get localized version of casual generator:
 
 ```javascript
-var casual = require('casual').ru_RU;
+let casual = require('casual').ru_RU;
 casual.street; // 'Бухарестская'
 ```
 
@@ -228,7 +228,7 @@ If you don't find necessary locale, please create an issue or just [add it](#con
 Get random array element
 
 ```javascript
-var item = casual.random_element(['ball', 'clock', 'table']);
+let item = casual.random_element(['ball', 'clock', 'table']);
 ```
 
 #### random_value
@@ -236,7 +236,7 @@ var item = casual.random_element(['ball', 'clock', 'table']);
 Extract random object value
 
 ```javascript
-var val = casual.random_value({ a: 1, b: 3, c: 42 });
+let val = casual.random_value({ a: 1, b: 3, c: 42 });
 // val will be equal 1 or 3 or 42
 ```
 
@@ -245,7 +245,7 @@ var val = casual.random_value({ a: 1, b: 3, c: 42 });
 Extract random object key
 
 ```javascript
-var val = casual.random_key({ a: 1, b: 3, c: 42 });
+let val = casual.random_key({ a: 1, b: 3, c: 42 });
 // val will be equal 'a' or 'b' or 'c'
 ```
 
@@ -263,7 +263,7 @@ casual.populate('{{email}} {{first_name}}');
 Pick random element from given array and populate it
 
 ```javascript
-var formats = ['{{first_name}}', '{{last_name}} {{city}}'];
+let formats = ['{{first_name}}', '{{last_name}} {{city}}'];
 casual.populate_one_of(formats);
 
 // Same as
@@ -276,7 +276,7 @@ casual.populate(casual.random_element(formats));
 Replace all `#` in string with digits
 
 ```javascript
-var format = '(##)-00-###-##';
+let format = '(##)-00-###-##';
 casual.numerify(format); // '(10)-00-843-32'
 ```
 
@@ -289,8 +289,8 @@ casual.numerify(format); // '(10)-00-843-32'
 Register generators provider
 
 ```javascript
-var words = ['flexible', 'great', 'ok', 'good'];
-var doge_provider = {
+let words = ['flexible', 'great', 'ok', 'good'];
+let doge_provider = {
 	such: function() {
 		return 'such ' + casual.random_element(words);
 	},
@@ -322,15 +322,15 @@ If you want to pass generator as a callback somewhere or just hate properties yo
 
 ```javascript
 // Generate value using function
-var title = casual._title();
+let title = casual._title();
 // Same as
-var title = casual.title;
+let title = casual.title;
 
 // Pass generator as callback
-var array_of = function(times, generator) {
-	var result = [];
+let array_of = function(times, generator) {
+	let result = [];
 
-	for (var i = 0; i < times; ++i) {
+	for (let i = 0; i < times; ++i) {
 		result.push(generator());
 	}
 
@@ -338,13 +338,13 @@ var array_of = function(times, generator) {
 };
 
 // Will generate array of five random timestamps
-var array_of_timestamps = array_of(5, casual._unix_time);
+let array_of_timestamps = array_of(5, casual._unix_time);
 ```
 
 Or you can get functional version of casual generator:
 
 ```javascript
-var casual = require('casual').functions();
+let casual = require('casual').functions();
 
 // Generate title
 casual.title();
